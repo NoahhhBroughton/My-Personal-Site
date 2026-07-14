@@ -537,6 +537,11 @@ const projects={
   }
 };
 
+// Remove specific inactive item from photo videos (keeps source intact)
+if (projects && projects.photo && Array.isArray(projects.photo.items)) {
+  projects.photo.items = projects.photo.items.filter(i => i.title !== 'Local Artists Project (Inactive)');
+}
+
 /* ── CYCLING PREVIEWS on work cards ─────────────────── */
 // Maps each card's cycle container to an array of color/icon slides
 // When you add real images, set bg:'url(path/to/img.jpg)' instead of a color
